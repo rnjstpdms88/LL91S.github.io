@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>밍쿱 미리보기</title>
+</head>
+<body>
+
+    <!-- First Page -->
+    <div id="first" class="page">
+        <div class="image-container">
+            <a href="#second" onclick="handleImageClick('second')"><img id="firstImage" src="images/로고 미리.jpg" alt="First Image"></a>
+        </div>
+    </div>
+
+    <!-- Second Page -->
+    <div id="second" class="page">
+        <div class="image-container">
+            <img src="images/제목 없음-1.jpg" alt="Second Image 1" class="image-item" style="margin-top: 20px; margin-bottom: 0px;" onclick="handleImageClick('third')">
+            <img src="images/제목 없음-2.jpg" alt="Second Image 2" class="image-item" style="margin-top: 20px; margin-bottom: 0px;" onclick="handleImageClick('fourth')">
+            <img src="images/제목 없음-3.jpg" alt="Second Image 3" class="image-item" style="margin-top: 20px; margin-bottom: 0px;" onclick="handleImageClick('fifth')">
+            <img src="images/제목 없음-4.jpg" alt="Second Image 4" class="image-item" style="margin-top: 40px; margin-bottom: 0px;" onclick="handleImageClick('first')">
+        </div>
+    </div>
+
+    <!-- Third Page -->
+    <div id="third" class="page">
+        <div class="image-container">
+            <!-- 이미지 상단 간격 수정 -->
+            <div style="display: flex; flex-direction: row; align-items: flex-end; justify-content: center; margin-top: 30px;">
+                <a href="https://www.instagram.com/sound_of_coups/" target="_blank"><img src="images/에스쿱스.jpg" alt="Third Image 1" style="margin: 10px; width: 400px; height: 560px; object-fit: cover;"></a>
+                <a href="https://www.instagram.com/everyone_woo/" target="_blank"><img src="images/원우.jpg" alt="Third Image 2" style="margin: 10px; width: 400px; height: 560px; object-fit: cover;"></a>
+            </div>
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                <a href="https://www.instagram.com/xuminghao_o/" target="_blank"><img src="images/디에잇.jpg" alt="Third Image 3" style="margin: 10px; width: 400px; height: 560px; object-fit: cover;"></a>
+                <a href="https://www.instagram.com/min9yu_k/" target="_blank"><img src="images/민규.jpg" alt="Third Image 4" style="margin: 10px; width: 400px; height: 560px; object-fit: cover;"></a>
+            </div>
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                <a href="https://www.instagram.com/vernonline/" target="_blank"><img src="images/버논.jpg" alt="Third Image 5" style="margin: 10px; width: 400px; height: 560px; object-fit: cover;"></a>
+            </div>
+            <!-- 이미지 5와 이미지 6 사이의 간격 수정 -->
+            <div style="margin-top: 20px;"></div>
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                <!-- 세 번째 페이지의 추가 이미지를 클릭하면 두 번째 페이지로 이동하도록 수정 -->
+                <a href="#second" onclick="handleImageClick('second')"><img src="images/돌아가기 버튼.jpg" alt="Third Image 6 (Additional)" style="margin: 10px; width: 92px; height: 92px;"></a>
+            </div>
+            <!-- 이미지 하단 간격 수정 -->
+            <div style="margin-bottom: 30px;"></div>
+        </div>
+    </div>
+
+    <!-- Fourth Page -->
+    <div id="fourth" class="page">
+        <div class="video-container" style="margin-top: 50px;">
+            <!-- YouTube embed code with the shared link -->
+            <iframe width="900" height="506" src="https://www.youtube.com/embed/zSQ48zyWZrY?si=5MpBQZyw553iOblY" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="image-container">
+            <!-- 이미지 상단 간격 수정 -->
+            <a href="#second" onclick="handleImageClick('second')"><img src="images/돌아가기 버튼.jpg" alt="Fourth Image" style="margin-top: 20px;"></a>
+        </div>
+        <!-- 이미지 하단 간격 수정 -->
+        <div style="margin-bottom: 50px;"></div>
+    </div>
+
+    <!-- Fifth Page -->
+    <div id="fifth" class="page">
+        <div class="image-container">
+            <!-- 첫 번째 사진: 너비 400px, 높이 auto, 상단 여백 20px, 하단 여백 40px로 수정 -->
+            <img src="images/sns.jpg" alt="Fifth Image 1" style="width: 400px; height: auto; margin-top: 20px; margin-bottom: 40px;">
+            
+            <!-- 두 번째 사진: 너비 92px, 높이 92px, 상단 여백 20px, 하단 여백 40px로 수정 -->
+            <a href="#second" onclick="handleImageClick('second')"><img src="images/돌아가기 버튼.jpg" alt="Fifth Image 2" style="width: 92px; height: 92px; margin-top: 20px; margin-bottom: 40px;"></a>
+        </div>
+    </div>
+
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 20;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffffff00;
+            background-image: url('images/밍쿱.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #third {
+            height: 100vh; /* 변경된 부분: 세 번째 페이지의 스크롤 범위를 더 크게 조정 */
+        }
+
+        #fifth {
+            height: 100vh;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-container img.image-item {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            cursor: pointer; /* 이미지에 마우스 커서가 클릭 표시로 변경 */
+        }
+
+        .video-container {
+            text-align: center;
+        }
+
+        .video-container iframe {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <!-- Script to Show/Hide Pages -->
+    <script>
+        // Function to show a specific page and hide others
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.style.display = 'block';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+
+            // Store the current page in sessionStorage
+            sessionStorage.setItem('currentPage', pageId);
+        }
+
+        // Function to handle image click and navigate to the next page
+        function handleImageClick(pageId) {
+            showPage(pageId);
+        }
+
+        // Function to check sessionStorage for the last visited page
+        function checkLastVisitedPage() {
+            const lastVisitedPage = sessionStorage.getItem('currentPage');
+            if (lastVisitedPage) {
+                showPage(lastVisitedPage);
+            } else {
+                // Initial page to show (you can change this to the default page)
+                showPage('first');
+            }
+        }
+
+        // Check for the last visited page when the document is ready
+        document.addEventListener('DOMContentLoaded', checkLastVisitedPage);
+    </script>
+
+</body>
+</html>
